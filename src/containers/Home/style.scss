@@ -37,6 +37,7 @@
     }
     .container-head-more {
         float: right;
+        color: #fff;
     }
     .container-head-title {
         font-size: 20px;
@@ -53,6 +54,9 @@
     .tag-block {
         padding: 20px 15px 15px;
     }
+    .tag-block:hover {
+      background-color: rgba(0,0,0,.3);
+    }
     .block-title {
         font-size: 14px;
         margin-bottom: 10px;
@@ -61,13 +65,30 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+        height: 40px;
+        line-height: 40px;
+        overflow: hidden;
+    }
+    .tag-list--active {
+        // display: flex;
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        overflow: hidden;
     }
     .tag-list-item {
-        flex: 1;
+        display: inline-block;
+        flex: 1 1 auto;
         font-size: 16px;
-        line-height: 21px;
+        line-height: 40px;
         color: #fff;
+        margin-right: 20px;
     }
+    // .tag-list-item + .tag-list-item {
+    //     margin-left: 20px;
+    // }
     .branding {
         position: absolute;
         left: 416px;
@@ -207,46 +228,44 @@
         margin-bottom: 10px;
     }
     .job-company-desc {
-      color: #a2a8b3;
+        color: #a2a8b3;
     }
     .job-company-tag {
-      color: #a2a8b3;
+        color: #a2a8b3;
     }
-
     // usher
     .usher {
-      width: 960px;
-      margin: 40px auto;
-      text-align: center;
-      height: 40px;
-      line-height: 40px;
+        width: 960px;
+        margin: 40px auto;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
     }
     .usher-more {
-      display: inline-block;
-      color: #6b7485;
-      padding: 0 30px;
-      border: 1px solid #a2a8b3;
-      border-radius: 20px;
+        display: inline-block;
+        color: #6b7485;
+        padding: 0 30px;
+        border: 1px solid #a2a8b3;
+        border-radius: 20px;
     }
-
     // footer
     .footer {
-      width: 960px;
-      margin: 0 auto;
-      padding: 30px 0;
-      line-height: 26px;
+        width: 960px;
+        margin: 0 auto;
+        padding: 30px 0;
+        line-height: 26px;
     }
     .links {
-      float: right;
+        float: right;
     }
     .link-item {
-      float: left;
-      margin-left: 20px;
+        float: left;
+        margin-left: 20px;
     }
     .link-item-title {
-      display: block;
-      color: #707b91;
-      text-align: center;
-      padding: 0 5px;
+        display: block;
+        color: #707b91;
+        text-align: center;
+        padding: 0 5px;
     }
 }

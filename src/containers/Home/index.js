@@ -1,10 +1,31 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import styles from './style.scss'
+
 class Home extends Component {
   constructor (props) {
     super(props)
     this.state = {}
+    this.handleTagBlockMouseEnter = this.handleTagBlockMouseEnter.bind(this)
+    this.handleTagBlockMouseLeave = this.handleTagBlockMouseLeave.bind(this)
+  }
+  handleTagBlockMouseEnter (event) {
+    let oldTarget = event.target
+    let tagList = oldTarget.querySelector('[class*="tag-list__"]')
+    let tagListActive = oldTarget.querySelector('[class*="tag-list--active___"]')
+    if (!!tagList && !!tagListActive) {
+      tagList.style.display = 'none'
+      tagListActive.style.display = 'flex'
+    }
+  }
+  handleTagBlockMouseLeave (event) {
+    let oldTarget = event.target
+    let tagList = oldTarget.querySelector('[class*="tag-list__"]')
+    let tagListActive = oldTarget.querySelector('[class*="tag-list--active___"]')
+    if (!!tagList && !!tagListActive) {
+      tagList.style.display = 'flex'
+      tagListActive.style.display = 'none'
+    }
   }
   render () {
     let jobItems = ''
@@ -14,7 +35,7 @@ class Home extends Component {
     let tagItems = [
       {
         title: '技术',
-        items: ['PHP', 'Python', 'Java', 'Ruby', 'iOS', 'Andriod']
+        items: ['PHP', 'Python', 'Java', 'Ruby', 'iOS', 'Andriod', 'JavaScript', 'C/C++', 'C#', 'Linux', 'Web 前端', '构架师', '高级工程师', '运维', '测试']
       },
       {
         title: '设计',
@@ -35,7 +56,7 @@ class Home extends Component {
     ]
 
     let tagBlocks = tagItems.map((item, index) => {
-      return <TagBlock item={item} key={index} />
+      return <TagBlock item={item} key={index} handleTagBlockMouseEnter={this.handleTagBlockMouseEnter} handleTagBlockMouseLeave={this.handleTagBlockMouseLeave} />
     })
     return (
       <div>
@@ -44,7 +65,7 @@ class Home extends Component {
             <div className={styles.filter}>
               <div className={styles['filter-container']}>
                 <div className={classNames(styles['container-head'], styles['clearfix'])}>
-                  <a className={styles['container-head-more']} href='javascript;'>
+                  <a className={styles['container-head-more']} href='javascript:void(0);'>
                   浏览全部
                   <span className={classNames(styles['container-head-icon'])}>></span>
                   </a>
@@ -84,7 +105,7 @@ class Home extends Component {
         </div>
 
         <div className={styles['usher']}>
-          <a className={classNames(styles['usher-more'])} href='javascript;'>更多职位</a>
+          <a className={classNames(styles['usher-more'])} href='javascript:void(0);'>更多职位</a>
         </div>
 
         <div className={styles.footer}>
@@ -148,15 +169,21 @@ const TagBlock = (props) => {
   let tagItems = ''
   // let items = ['PHP', 'Python', 'Java', 'Ruby', 'iOS', 'Andriod']
   let {title, items} = props.item
+  let {handleTagBlockMouseEnter, handleTagBlockMouseLeave} = props
   tagItems = items.map((item, index) => {
     return <TagListItem item={item} key={index} />
   })
+  // console.log('handleTagBlockMouseEnter >>>', handleTagBlockMouseEnter)
   return (
-    <div className={classNames(styles['tag-block'])}>
+    <div className={classNames(styles['tag-block'])} onMouseEnter={handleTagBlockMouseEnter} onMouseLeave={handleTagBlockMouseLeave}>
       <div className={classNames(styles['block-title'])}>
         {title}
       </div>
       <div className={styles['tag-list']}>
+        {tagItems}
+      </div>
+
+      <div className={styles['tag-list--active']}>
         {tagItems}
       </div>
     </div>
@@ -166,7 +193,7 @@ const TagBlock = (props) => {
 const TagListItem = (props) => {
   const {item} = props
   return (
-    <a className={classNames(styles['tag-list-item'])} href='javascript;'>{item}</a>
+    <a className={classNames(styles['tag-list-item'])} href='javascript:void(0);'>{item}</a>
   )
 }
 

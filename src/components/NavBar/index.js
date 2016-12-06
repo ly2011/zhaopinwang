@@ -12,11 +12,11 @@ class NavBar extends Component {
         <div className={styles['header-inner']}>
           <div className={styles['head-body']}>
             <div className={styles['head-logo-wrapper']}>
-              <a href='javascript;' className={classNames(styles['head-logo'], styles.icon)} />
+              <a href='javascript:void(0);' className={classNames(styles['head-logo'], styles.icon)} />
             </div>
             <nav className={classNames(styles['head-nav'], styles.clearfix)}>
-              <a className={styles['nav-item']} href='javascript;'>首页</a>
-              <a className={styles['nav-item']} href='javascript;'>全部职位</a>
+              <a className={styles['nav-item']} href='javascript:void(0);'>首页</a>
+              <a className={styles['nav-item']} href='javascript:void(0);'>全部职位</a>
             </nav>
             <nav className={classNames(styles['head-right'], styles.clearfix)}>
               <div className={styles['head-search-wrapper']}>
@@ -34,8 +34,8 @@ class NavBar extends Component {
                 </div>
               </div>
               <nav className={styles['head-nav']}>
-                <a className={styles['nav-item']} href='javascript;'>登录</a>
-                <a className={styles['nav-item']} href='javascript;'>注册</a>
+                <a className={styles['nav-item']} href='javascript:void(0);'>登录</a>
+                <a className={styles['nav-item']} href='javascript:void(0);'>注册</a>
               </nav>
               <div className={styles['head-publish']}>
                 <a className={styles['blue-btn']} href='javascript'>发布职位</a>
