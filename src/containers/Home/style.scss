@@ -1,0 +1,252 @@
+@import '../../assets/scss/mixin.scss';
+:local {
+    .clearfix {
+        @include clearfix;
+    }
+    .welcome {
+        position: relative;
+        width: 100%;
+        height: 620px;
+        margin: -70px auto 30px;
+        background: url(../../assets/bg.jpg) no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+    .wrapper {
+        position: relative;
+        width: 960px;
+        height: 620px;
+        margin: 0 auto;
+    }
+    .filter {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 416px;
+        height: 460px;
+        background-color: rgba(39, 39, 39, .9);
+        color: #fff;
+        border-radius: 2px 2px 0 0;
+    }
+    .filter-container {
+        margin: 20px 15px 0;
+    }
+    .container-head {
+        padding: 0 15px;
+        border-bottom: 1px solid #999;
+    }
+    .container-head-more {
+        float: right;
+    }
+    .container-head-title {
+        font-size: 20px;
+        line-height: 20px;
+        margin-bottom: 10px;
+        font-weight: 700;
+        -webkit-font-smoothing: antialiased;
+    }
+    .container-body {
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+    }
+    .tag-block {
+        padding: 20px 15px 15px;
+    }
+    .block-title {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .tag-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .tag-list-item {
+        flex: 1;
+        font-size: 16px;
+        line-height: 21px;
+        color: #fff;
+    }
+    .branding {
+        position: absolute;
+        left: 416px;
+        bottom: 0;
+        width: 544px;
+        height: 460px;
+        text-align: center;
+    }
+    .branding-logo {
+        display: block;
+        width: 264px;
+        height: 264px;
+        margin: 40px auto;
+        background: url(../../assets/nsb-logo.png) no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+    .btn {
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border: none;
+        border-radius: 3px;
+        font-size: 16px;
+        color: #fff;
+        cursor: pointer;
+        user-select: none;
+        transition: opacity .2s ease;
+    }
+    .branding-action {
+        composes: btn;
+        display: block;
+        background: linear-gradient(#2ba9ec, #0789c6);
+        border-radius: 4px;
+        height: 40px;
+        line-height: 40px;
+        width: 120px;
+        color: #fff;
+        margin: 0 auto;
+        font-size: 18px;
+        box-shadow: 0 0 4px rgba(118, 118, 118, .5);
+        -webkit-font-smoothing: antialiased;
+    }
+    .blue-btn {
+        // composes: btn;
+        // height: 40px;
+        // line-height: 40px;
+        // width: 80px;
+        // margin-left: 20px;
+        // font-size: 14px;
+        // background-color: #36a9e5;
+    }
+    // jobs
+    .jobs {
+        position: relative;
+        width: 960px;
+        margin: 10px auto 0;
+        overflow: hidden;
+    }
+    .jobs-inner {
+        position: relative;
+        width: 960px;
+        margin: 0 auto;
+    }
+    .jobs-top {
+        //     padding: 0 15px;
+        //     height: 50px;
+        //     line-height: 50px;
+        border-bottom: 1px solid #ecedf0;
+    }
+    ul,
+    li {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .jobs-top-more {
+        float: right;
+        color: #6b7485;
+    }
+    .jobs-top-more-title {
+        font-size: 20px;
+        line-height: 20px;
+        margin-bottom: 10px;
+        font-weight: 700;
+        -webkit-font-smoothing: antialiased;
+    }
+    .jobs-list {
+        position: relative;
+        width: 100%;
+    }
+    .jobs-category {
+        // width: 50%;
+        // float: left;
+    }
+    .job-item {
+        width: 50%;
+        float: left;
+    }
+    .job-link {
+        display: block;
+        margin-right: 15px;
+        padding: 20px 30px;
+        border-bottom: 1px solid #ecedf0;
+        color: #6b7485;
+        line-height: 20px;
+    }
+    .job-main {
+        position: relative;
+        float: left;
+        margin-right: 50px;
+    }
+    .job-logo-wrapper {
+        position: relative;
+        float: right;
+        overflow: hidden;
+    }
+    .job-logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 2px;
+        background: url(../../assets/company-logo.png) no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+    .job-name,
+    .job-company-desc {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -webkit-font-smoothing: antialiased;
+    }
+    .job-name {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .job-company-desc {
+      color: #a2a8b3;
+    }
+    .job-company-tag {
+      color: #a2a8b3;
+    }
+
+    // usher
+    .usher {
+      width: 960px;
+      margin: 40px auto;
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+    }
+    .usher-more {
+      display: inline-block;
+      color: #6b7485;
+      padding: 0 30px;
+      border: 1px solid #a2a8b3;
+      border-radius: 20px;
+    }
+
+    // footer
+    .footer {
+      width: 960px;
+      margin: 0 auto;
+      padding: 30px 0;
+      line-height: 26px;
+    }
+    .links {
+      float: right;
+    }
+    .link-item {
+      float: left;
+      margin-left: 20px;
+    }
+    .link-item-title {
+      display: block;
+      color: #707b91;
+      text-align: center;
+      padding: 0 5px;
+    }
+}

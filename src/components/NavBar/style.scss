@@ -1,0 +1,116 @@
+@import '../../assets/scss/mixin.scss';
+:local {
+    .header {
+        position: relative;
+        background: rgba(39, 39, 39, .5);
+        box-shadow: none;
+        width: 100%;
+        z-index: 999;
+        user-select: none;
+    }
+    .header-inner {
+        position: relative;
+        width: 960px;
+        // padding: 0 20px;
+        height: 70px;
+        line-height: 70px;
+        margin: 0 auto;
+        // overflow: hidden;
+    }
+    .head-logo-wrapper {
+        float: left;
+        position: relative;
+        height: 70px;
+        width: 134px;
+    }
+    .head-logo {
+        position: absolute;
+        top: 50%;
+        /* 下移父元素的一半高度 */
+        transform: translateY(-50%);
+        /* 上移自身高度的一半 */
+        background: url(../../assets/logo.png) no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        width: 134px;
+        height: 29px;
+    }
+    .icon,
+    .icons,
+    i {
+        display: inline-block;
+        vertical-align: 0;
+    }
+    .clearfix {
+        @include clearfix;
+    }
+    .nav-item {
+        position: relative;
+        display: block;
+        float: left;
+        font-size: 16px;
+        padding: 0;
+        text-align: center;
+        color: #fff;
+        padding-left: 40px;
+    }
+    .head-right {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        white-space: nowrap;
+    }
+    .head-search-wrapper {
+        float: left;
+        position: relative;
+        overflow: hidden;
+        height: 70px;
+        line-height: 70px;
+        width: 200px;
+    }
+    .head-search {
+        position: absolute;
+        top: 50%;
+        /* 下移父元素的一半高度 */
+        transform: translateY(-50%);
+        /* 上移自身高度的一半 */
+        height: 40px;
+        line-height: 40px;
+        border-radius: 2px;
+        transition: width .3s ease;
+    }
+    .search {
+      width: 200px !important;
+    }
+    .search-btn {
+      display: none;
+    }
+    .head-nav {
+        float: left;
+    }
+    .head-publish {
+        float: right;
+    }
+    .btn {
+      display: inline-block;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border: none;
+      border-radius: 3px;
+      font-size: 16px;
+      color: #fff;
+      user-select: none;
+      transition: opacity .2s ease;
+    }
+    .blue-btn {
+      composes: btn;
+      height: 40px;
+      line-height: 40px;
+      width: 80px;
+      margin-left: 20px;
+      font-size: 14px;
+      background-color: #36a9e5;
+    }
+
+}
