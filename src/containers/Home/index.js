@@ -138,27 +138,27 @@ class Home extends Component {
 const JobItem = (props) => {
   return (
     <li className={classNames(styles['job-item'])}>
-      <a className={classNames(styles['job-link'], styles['clearfix'])} href='javascript;'>
+      <a className={classNames(styles['job-link'], styles['clearfix'])} href='javascript:void(0);'>
         <div className={styles['job-main']}>
           <div className={styles['job-name']}>
             PHP工程师
           </div>
           <div className={styles['job-company-info']}>
-            <span className={styles['job-company-icon']}></span>
+            <span className={classNames(styles['icon'], styles['job-company-icon'], 'iconfont', 'icon-house')} />
             <span className={styles['job-company-name']}>
               <span className={styles['job-company-tag']}>(移动互联网, 教育)</span>
             </span>
           </div>
 
           <div className={styles['job-company-desc']}>
-            <span className={classNames(styles['icon'], styles['location'])}></span>
+            <span className={classNames(styles['icon'], styles['location'], 'iconfont', 'icon-location')} />
             <span className={styles['job-company-address']}>北京</span>
-            <span className={classNames(['icon'], styles['money'])}></span>
+            <span className={classNames(styles['icon'], styles['money'], 'iconfont', 'icon-money')} />
             <span className={styles['job-price']}>2000 起</span>
           </div>
         </div>
         <div className={styles['job-logo-wrapper']}>
-          <div className={styles['job-logo']}></div>
+          <div className={styles['job-logo']} />
         </div>
       </a>
     </li>

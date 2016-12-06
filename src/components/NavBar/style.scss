@@ -79,8 +79,16 @@
         border-radius: 2px;
         transition: width .3s ease;
     }
+    .search-icon {
+      position: absolute;
+        left: 12px;
+        width: 16px;
+        height: 16px;
+    }
     .search {
       width: 200px !important;
+      padding-left: 30px !important;
+      font-size: 14px !important;
     }
     .search-btn {
       display: none;

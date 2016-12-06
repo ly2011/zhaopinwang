@@ -21,7 +21,8 @@ class NavBar extends Component {
             <nav className={classNames(styles['head-right'], styles.clearfix)}>
               <div className={styles['head-search-wrapper']}>
                 <div className={styles['head-search']}>
-                  <span className={styles['search-icon']} />
+                  <span className={classNames(styles['search-icon'], 'iconfont', 'icon-search')} />
+
                   <input
                     className={styles.search}
                     type='text'

@@ -166,6 +166,13 @@
         padding: 0;
         margin: 0;
     }
+    .icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      opacity: 0.33;
+      margin-right: 10px;
+    }
     .jobs-top-more {
         float: right;
         color: #6b7485;
@@ -216,11 +223,17 @@
         background-position: 50% 50%;
     }
     .job-name,
+    .job-company-icon {
+      opacity: 1;
+    }
     .job-company-desc {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
         -webkit-font-smoothing: antialiased;
+    }
+    .job-company-address {
+      margin-right: 10px;
     }
     .job-name {
         font-size: 18px;
