@@ -89,6 +89,7 @@ class Home extends Component {
             <div className={styles['jobs-top']}>
               <div className={classNames(styles['jobs-top-more-wrapper'], styles['clearfix'])}>
                 <a className={styles['jobs-top-more']} href='javascript;'>
+                  <span className={classNames(styles['icon'], styles['title-icon'], 'iconfont', 'icon-grid')} />
                   <span>更多职位</span>
                 </a>
                 <h2 className={classNames(styles['jobs-top-more-title'])}>精选职位</h2>
