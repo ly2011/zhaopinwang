@@ -103,5 +103,13 @@
     "webpack-hot-middleware": "^2.12.2",
     "webpack-merge": "^0.14.1",
     "webpack-visualizer-plugin": "^0.1.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ly2011/zhaopinwang.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ly2011/zhaopinwang/issues"
+  },
+  "homepage": "https://github.com/ly2011/zhaopinwang#readme"
 }
