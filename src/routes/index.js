@@ -2,7 +2,7 @@
  * @Author: fengyun2
  * @Date:   2016-10-22 14:39:34
  * @Last Modified by: fengyun2
- * @Last Modified time: 2016-12-11 13:19:54
+ * @Last Modified time: 2016-12-11 13:34:57
  */
 
 /**
@@ -59,8 +59,7 @@ export default [{
     //     cb(null, require('CONTAINERS/UserDemo/add').default)
     //   })
     // }
-  },
-    {
+  }, {
       // path: 'user_list',
       // // component: require('CONTAINERS/Category/add').default
       // getComponent(nextState, cb) {
@@ -68,8 +67,7 @@ export default [{
       //     cb(null, require('CONTAINERS/UserDemo').default)
       //   })
       // }
-    },
-    {
+  }, {
       // path: 'add_article',
       // // component: require('CONTAINERS/Note').default,
       // onEnter(nextState, replaceState) { // nextState 表示要进入的下一个路径 replaceState 表示替换路由状态的方法

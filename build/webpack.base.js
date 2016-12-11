@@ -103,6 +103,7 @@ module.exports = {
             //   }
             // ?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]
           },
+          // 'resolve-url-loader',
           'postcss-loader',
           'sass-loader']
         })
