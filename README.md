@@ -40,6 +40,8 @@ loader: ExtractTextPlugin.extract({
 })
 ```
 
+- `css-loader` 的 `getLocalIdent` 方法 不生效
+
 ### 2016/12/06
 
 - `mouse` 事件

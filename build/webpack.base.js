@@ -70,9 +70,41 @@ module.exports = {
         test: /\.(sass|scss)$/,
         // include: path.resolve(__dirname, 'src'),
         // loader: 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader!sass-loader',
+        // loader: ExtractTextPlugin.extract({
+        //   fallbackLoader: 'style-loader',
+        //   loader: 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader!sass-loader'
+        // }),
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader!sass-loader'
+          loader: [
+          {
+            loader: 'css-loader',
+            query: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[path]---[name]---[local]---[hash:base64:5]',
+              getLocalIdent: function (loaderContext, localIdentName, localName, options) { // getLocalIdent 不生效
+                  // return 'whatever_random_class_name'
+                  console.log('loaderContext >>>', loaderContext)
+                  console.log('localIdentName >>>', localIdentName)
+                  console.log('localName >>>', localName)
+                  console.log('options >>>', options)
+                  return `${localIdentName}__${localName}`
+              }
+            },
+            // options: {
+            //     module: true,
+            //     // getLocalIdent: (loaderContext, localIdentName, localName, options) => `${loaderContext}-${localIdentName}-${localName}-${options}`,
+            //     getLocalIdent: function (loaderContext, localIdentName, localName, options) {
+            //       console.log(arguments)
+            //       return 'whatever_random_class_name'
+            //     },
+            //     localIdentName: '[path]---[name]---[local]---[hash:base64:5]'
+            //   }
+            // ?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]
+          },
+          'postcss-loader',
+          'sass-loader']
         })
       },
 

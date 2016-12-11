@@ -2,7 +2,7 @@
  * @Author: fengyun2
  * @Date:   2016-10-22 14:39:34
  * @Last Modified by: fengyun2
- * @Last Modified time: 2016-12-06 13:50:16
+ * @Last Modified time: 2016-12-11 13:19:54
  */
 
 /**
@@ -28,13 +28,13 @@ export default [{
 
   },
   childRoutes: [{
-    // path: 'button',
-    // // component: require('CONTAINERS/Brand').default
-    // getComponent(nextState, cb) {
-    //   require.ensure([], (require) => {
-    //     cb(null, require('CONTAINERS/ButtonDemo').default)
-    //   })
-    // }
+    path: 'home',
+    // component: require('CONTAINERS/Brand').default
+    getComponent(nextState, cb) {
+      require.ensure([], (require) => {
+        cb(null, require('CONTAINERS/Home').default)
+      })
+    }
   }, {
     // path: 'cell',
     // // component: require('CONTAINERS/Product').default
