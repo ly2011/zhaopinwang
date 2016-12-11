@@ -99,11 +99,32 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/
       }, {
-        test: /\.(png|jpg|gif|svg|ttf|woff|eot)$/,
+        test: /\.(ttf|woff|eot)$/,
         loader: 'file-loader',
         query: {
           name: 'file/[name].[ext]'
         }
+      }, {
+        test: /.*\.(gif|png|jpe?g|svg)$/i,
+        loaders: [
+          'file-loader?hash=sha512&digest=hex&name=file/[name]__[hash:base64:16].[ext]',
+          {
+            loader: 'image-webpack-loader',
+            query: {
+              // name: 'file/[name].[ext]',
+              progressive: true,
+              optimizationLevel: 7,
+              interlaced: false,
+              mozjpeg: {
+                quality: 65
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4
+              }
+            }
+          }
+        ]
       }
     ],
   // rules: [
@@ -137,7 +158,7 @@ module.exports = {
             customMedia(),
             cssnext(),
             customProperties(),
-            pxtorem({rootValue: 20, propWhiteList: []})
+            // pxtorem({rootValue: 20, propWhiteList: []})
           ]
         }
       }
