@@ -20,6 +20,10 @@
 
 主要是 `AggressiveMergingPlugin`
 
+- 优化 图片压缩
+
+`add image-webpack and remove pxtorem`
+
 ### 2016/12/06
 
 - `mouse` 事件
