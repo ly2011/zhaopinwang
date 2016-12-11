@@ -127,8 +127,9 @@ module.exports = {
     new webpack
       .optimize
       .OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    // new webpack.optimize.DedupePlugin(), //删除类似的重复代码(DedupePlugin在webpack2.x中被废弃了)
+
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: function () {

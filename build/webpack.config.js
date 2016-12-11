@@ -17,6 +17,7 @@ const developmentConf = merge(baseConfig, {
     index: [path.resolve(__dirname, '../src/index.js')]
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       vue: {
         postcss: [require('autoprefixer')({flexbox: true, browsers: ['last 3 versions']})],

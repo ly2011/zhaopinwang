@@ -14,6 +14,12 @@
 
 ##升级
 
+### 2016/12/11
+
+- 优化 webpack2 压缩
+
+主要是 `AggressiveMergingPlugin`
+
 ### 2016/12/06
 
 - `mouse` 事件

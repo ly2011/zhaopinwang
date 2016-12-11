@@ -54,11 +54,12 @@ const productionConf = merge(baseConfig, {
   },
   plugins: [
     // 定义环境变量
-    new webpack.DefinePlugin({
+    new webpack.DefinePlugin({ // <-- 减少 React 大小的关键
       'process.env': {
         NODE_ENV: '"production"'
       }
     }),
+    // new webpack.optimize.DedupePlugin(), //删除类似的重复代码(DedupePlugin在webpack2.x中被废弃了)
     new webpack
       .optimize
       .UglifyJsPlugin({ // 压缩js
@@ -89,6 +90,7 @@ const productionConf = merge(baseConfig, {
       },
       canPrint: true
     }),
+    new webpack.optimize.AggressiveMergingPlugin(),//合并块
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,
