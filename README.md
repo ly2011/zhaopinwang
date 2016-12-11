@@ -24,6 +24,22 @@
 
 `add image-webpack and remove pxtorem`
 
+- 修复 webpack2 `ERROR in ./src/containers/Home/style.scss
+Module build failed: ReferenceError: window is not defined
+    at eval (webpack:///./~/.0.13.1@style-loader/addStyles.js?:14:30)
+`
+
+去掉 `loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']` 中的 `style-loader` 即可
+
+- 解决 webpack2 `css modules`, `ExtractTextPlugin`
+
+```js
+loader: ExtractTextPlugin.extract({
+  fallbackLoader: 'style-loader',
+  loader: 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader!sass-loader'
+})
+```
+
 ### 2016/12/06
 
 - `mouse` 事件

@@ -14,8 +14,8 @@ module.exports = {
     // filename 字段有关而已)
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js'
+    filename: '[name]__[hash:16].bundle.js',
+    chunkFilename: '[name]__[hash:16].bundle.js'
   },
   resolve: {
     // modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -59,37 +59,48 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        // loader: ['style-loader', 'css-loader', 'postcss-loader']
-        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader'
+        // loader: ['css-loader', 'postcss-loader']
+        // loader: 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader'
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader'
+        })
       },
       {
         test: /\.(sass|scss)$/,
         // include: path.resolve(__dirname, 'src'),
-        // loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
-        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader!sass-loader'
+        // loader: 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader!sass-loader',
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader!sass-loader'
+        })
       },
 
       {
         test: /\.less$/,
         // include: path.resolve(__dirname, 'src'),
-        // loader: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
-        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader!less-loader'
+        // loader: ['css-loader', 'postcss-loader', 'less-loader']
+        // loader: 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader!less-loader'
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader!less-loader'
+        })
       },
       // {
       //   test: /\.css$/,
-      //   // loader: ['style-loader', 'css-loader', 'postcss-loader']
+      //   // loader: ['css-loader', 'postcss-loader']
       //   loader: ExtractTextPlugin.extract({
       //     fallbackLoader: 'style-loader',
-      //     loader: ['style-loader', 'css-loader', 'postcss-loader']
+      //     loader: ['css-loader', 'postcss-loader']
       //   })
       // },
       // {
       //   test: /\.(sass|scss)$/,
       //   // include: path.resolve(__dirname, 'src'),
-      //   // loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+      //   // loader: ['css-loader', 'postcss-loader', 'sass-loader']
       //   loader: ExtractTextPlugin.extract({
       //     fallbackLoader: 'style-loader',
-      //     loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+      //     loader: ['css-loader', 'postcss-loader', 'sass-loader']
       //   })
       // },
 

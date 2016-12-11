@@ -12,7 +12,7 @@ class NavBar extends Component {
         <div className={styles['header-inner']}>
           <div className={styles['head-body']}>
             <div className={styles['head-logo-wrapper']}>
-              <a href='javascript:void(0);' className={classNames(styles['head-logo'], styles.icon)} />
+              <a href='javascript:void(0);' className={classNames(styles.icon, styles['head-logo'])} />
             </div>
             <nav className={classNames(styles['head-nav'], styles.clearfix)}>
               <a className={styles['nav-item']} href='javascript:void(0);'>首页</a>
